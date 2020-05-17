@@ -1,0 +1,50 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Layout/LineLength:
+  Max: 100
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - spec/**/*.rb
+
+Style/BlockDelimiters:
+  Enabled: true
+  Exclude:
+    - spec/**/*.rb
+
+Style/NumericLiterals:
+  Enabled: false
+
+DescribedClass:
+  Enabled: false
+
+MultipleExpectations:
+  Enabled: false
+
+ExampleLength:
+  Max: 10
+
+RSpec/DescribeClass:
+  Enabled: true
+  Exclude:
+    - spec/system/**/*.rb
+    - spec/requests/**/*.rb
+    - spec/views/**/*.rb
+
+RSpec/ExampleLength:
+  Enabled: false
