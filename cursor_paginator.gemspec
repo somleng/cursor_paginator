@@ -7,12 +7,10 @@ Gem::Specification.new do |spec|
   spec.email         = ["dwilkie@gmail.com"]
 
   spec.summary       = "Cursor pagination"
-  spec.description   = "Cursor agination for ruby"
+  spec.description   = "Cursor pagination for ruby"
   spec.homepage      = "https://github.com/bongloy/cursor_paginator"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
-
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
 
@@ -24,6 +22,8 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "activesupport", ">= 3"
 
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "rspec-rails"
