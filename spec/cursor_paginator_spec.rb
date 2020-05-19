@@ -2,6 +2,7 @@ require "spec_helper"
 
 RSpec.describe CursorPaginator do
   it "lists all records with default pagination options" do
+    binding.pry
     create_records("older", "newer", "newest")
     stub_const("#{CursorPaginator}::DEFAULT_LIMIT", 2)
 
