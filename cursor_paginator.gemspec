@@ -3,8 +3,8 @@ require_relative "lib/cursor_paginator/version"
 Gem::Specification.new do |spec|
   spec.name          = "cursor_paginator"
   spec.version       = CursorPaginator::VERSION
-  spec.authors       = ["David Wilkie"]
-  spec.email         = ["dwilkie@gmail.com"]
+  spec.authors       = ["David Wilkie", "Samnang Chhun"]
+  spec.email         = ["dwilkie@bongloy.com", "samnang@bongloy.com"]
 
   spec.summary       = "Cursor pagination"
   spec.description   = "Cursor pagination for ruby"
@@ -27,7 +27,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "activerecord"
   spec.add_development_dependency "sqlite3"
-
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "rubocop"
