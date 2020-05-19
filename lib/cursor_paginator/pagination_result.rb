@@ -11,18 +11,12 @@ module CursorPaginator
       @paginator = paginator
     end
 
-    def first_item_cursor
-      return if paginator.cursor_direction.before? && last_page?
-      return if records.empty?
-
-      records.first.public_send(paginator.paginator_options.fetch(:primary_key))
+    def prev_cursor_params
+      { before: prev_cursor }
     end
 
-    def last_item_cursor
-      return if paginator.cursor_direction.after? && last_page?
-      return if records.empty?
-
-      records.last.public_send(paginator.paginator_options.fetch(:primary_key))
+    def next_cursor_params
+      { after: next_cursor }
     end
 
     def last_page?
@@ -30,6 +24,24 @@ module CursorPaginator
     end
 
     private
+
+    def prev_cursor
+      return if paginator.cursor_direction.before? && last_page?
+      return if records.empty?
+
+      fetch_cursor(records.first)
+    end
+
+    def next_cursor
+      return if paginator.cursor_direction.after? && last_page?
+      return if records.empty?
+
+      fetch_cursor(records.last)
+    end
+
+    def fetch_cursor(record)
+      record.public_send(paginator.paginator_options.fetch(:primary_key))
+    end
 
     def records
       @records ||= load_records

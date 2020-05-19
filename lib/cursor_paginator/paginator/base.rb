@@ -6,7 +6,7 @@ module CursorPaginator
       attr_reader :options_parser, :paginator_options
       delegate :cursor_direction, :page_size, to: :options_parser
 
-      def initialize(page_options, paginator_options: {})
+      def initialize(page_options: {}, paginator_options: {})
         @options_parser = OptionsParser.new(page_options)
         @paginator_options = paginator_options.reverse_merge(
           order_key: :id,
@@ -16,6 +16,11 @@ module CursorPaginator
       end
 
       private
+
+      def query_operator
+        return cursor_direction.after? ? :gt : :lt if sort_direction == :asc
+        return cursor_direction.after? ? :lt : :gt if sort_direction == :desc
+      end
 
       def order_direction
         cursor_direction.after? ? sort_direction : opposite_sort_direction

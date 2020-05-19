@@ -17,7 +17,7 @@ module CursorPaginator
 
         left, right = split_collection(collection, cursor_index)
 
-        cursor_direction.after? ? right : left
+        query_operator == :lt ? left : right
       end
 
       def find_cursor_index(collection)
