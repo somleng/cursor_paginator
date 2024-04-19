@@ -13,6 +13,17 @@ RSpec.describe CursorPaginator do
     expect(records[1].title).to eq("newer")
   end
 
+  it "handles limits correctly" do
+    create_records("older", "newer", "newest")
+
+    result = CursorPaginator.paginate(Post.limit(2))
+
+    records = result.to_a
+    expect(result.size).to eq(2)
+    expect(records[0].title).to eq("newest")
+    expect(records[1].title).to eq("newer")
+  end
+
   it "limits the number of records returned" do
     create_records("older", "newer", "newest")
 

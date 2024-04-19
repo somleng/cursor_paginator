@@ -5,8 +5,13 @@ module CursorPaginator
         records = scope.reorder(paginator_options.fetch(:order_key) => order_direction)
         records = filter_by_cursor(records) if options_parser.filter_required?
 
-        result = PaginationResult.new(records, self)
-        result
+        PaginationResult.new(records, self)
+      end
+
+      def take_records(records, limit)
+        return super if records.limit_value.blank?
+
+        super(records, [ records.limit_value, limit ].min)
       end
 
       private

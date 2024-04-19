@@ -54,7 +54,7 @@ module CursorPaginator
     end
 
     def load_records
-      records = records_scope.take(paginator.page_size + 1)
+      records = paginator.take_records(records_scope, paginator.page_size + 1)
       @additional_record = records.pop if records.size > paginator.page_size
       paginator.cursor_direction.after? ? records : records.reverse
     end
