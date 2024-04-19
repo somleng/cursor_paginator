@@ -3,12 +3,12 @@ require_relative "lib/cursor_paginator/version"
 Gem::Specification.new do |spec|
   spec.name          = "cursor_paginator"
   spec.version       = CursorPaginator::VERSION
-  spec.authors       = ["David Wilkie", "Samnang Chhun"]
-  spec.email         = ["dwilkie@bongloy.com", "samnang@bongloy.com"]
+  spec.authors       = [ "David Wilkie", "Samnang Chhun" ]
+  spec.email         = [ "dwilkie@someng.org", "samnang@somleng.org" ]
 
   spec.summary       = "Cursor pagination"
   spec.description   = "Cursor pagination for ruby"
-  spec.homepage      = "https://github.com/bongloy/cursor_paginator"
+  spec.homepage      = "https://github.com/somleng/cursor_paginator"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
@@ -21,15 +21,15 @@ Gem::Specification.new do |spec|
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = [ "lib" ]
 
   spec.add_dependency "activesupport", ">= 3"
 
   spec.add_development_dependency "activerecord"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rspec"
-  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop-rails-omakase"
   spec.add_development_dependency "rubocop-performance"
   spec.add_development_dependency "rubocop-rspec"
-  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "sqlite3", "~> 1.7"
 end

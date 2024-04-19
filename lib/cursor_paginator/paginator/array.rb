@@ -30,7 +30,7 @@ module CursorPaginator
         left, right = collection.partition.with_index { |_, i| i <= cursor_index }
         left.pop
 
-        [left, right]
+        [ left, right ]
       end
     end
   end

@@ -15,6 +15,10 @@ module CursorPaginator
         )
       end
 
+      def take_records(records, limit)
+        records.take(limit)
+      end
+
       private
 
       def query_operator

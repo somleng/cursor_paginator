@@ -9,24 +9,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Ruby
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.7.x
-
-    - name: Cache ruby gems
-      uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gem-cursor_paginator-${{ hashFiles('Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gem-cursor_paginator-
-
     - name: Install Dependencies
       run: |
         sudo apt-get install libsqlite3-dev
-        gem install bundler
-        bundle install --jobs 4 --retry 3
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
 
     - name: Run Specs
       run: |
