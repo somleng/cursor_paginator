@@ -1,0 +1,16 @@
+{
+  "bootstrap-sha": "f85974e958a5cff373dc6ba6b595e238bf8512d7",
+  "include-component-in-tag": false,
+  "version-file": "lib/cursor_paginator/version.rb",
+  "packages": {
+    ".": {
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "ruby",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
