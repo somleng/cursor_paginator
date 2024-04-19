@@ -1,6 +1,6 @@
 # CursorPaginator
 
-![Build](https://github.com/somleng/cursor_paginator/workflows/Build/badge.svg)
+[![Build](https://github.com/somleng/cursor_paginator/actions/workflows/build.yml/badge.svg)](https://github.com/somleng/cursor_paginator/actions/workflows/build.yml)
 
 A ruby cursor pagination library inspired by [https://jsonapi.org/profiles/ethanresnick/cursor-pagination](https://jsonapi.org/profiles/ethanresnick/cursor-pagination/)
 
